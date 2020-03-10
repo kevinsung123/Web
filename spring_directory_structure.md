@@ -1,0 +1,28 @@
+﻿### Spring프로젝트 디렉터리 구조
+-  src/main/java
+	- 자바코드(Controller, Model)
+- src/main/resources 
+	- 자바코드에서 사용할 리소스(mapper, sql)
+- src/test/java
+	- 테스트 코드
+- src/test/resources
+	- 테스트코드에서 사용할 리소스
+- maven dependencies 
+	- 라이브러리 관리도구(maven에서 다운받은 jar)
+- src/web
+	- web 디렉터리
+-  src/main/webapp/resources 
+	- js,css, image등 관리
+- src/main/webapp/WEB-INF/classes 
+	- 컴파일된 클래스
+- src/main/webapp/WEB-INF/spring
+	- 스프링 환결설정파일(root-context.xml, servlet-context.xml)
+- src/main/webapp/WEB-INF/views
+	- html,jsp파일
+- src/main/webapp/ 
+	- 외부접근가능
+- src/main/webapp/WEB-INF
+	- 외부접근불가, 컨트롤러 경유해서 접근가능
+※ WEB=INF
+-외부에서 직접접속이 차단
+-컴파일된 클래스와 스프링 환결설정파일(DB연결정보) 존재
