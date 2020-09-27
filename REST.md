@@ -93,5 +93,60 @@ https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
 - URI로 지정한 Resource에 대한 조작을 통일되고 한정적인 인터페이스로 수행한다.
 - HTTP 표준 프로토콜에 따르는 모든 플랫폼에서 사용이 가능하다.
 특정 언어나 기술에 종속되지 않는다.
+---
+### REST API 의 개념
+- Represential State Transfer API
+#### REST API란
+- API(Application Programming Interface)
+	- 데이터와 기능의 집합을 제공하여 컴퓨터와 프로그램간 상호작용을 촉진하며, 서로 정보를 교환 가능하도록 하는것
+- REST API 정의
+	- REST기반으로 서비스 API 구현하는것
+	- 최근 OPEN API, 마이크로서비서 등을 제공하는 업체 대부분은 REST API를 제공하는 것
+#### REST API 특징
+- 사내시스템들도 REST기반으로 시스템을 분산해 확장성과 재사용성을 높여 유지보수 및 운용을 편리하게 할 수 있음
+- REST는 HTTP표준을 기반으로 구현하므로 HTTP지원하는 프로그램언어로 클라이언트 서버를 구현
+---
+### REST API 설계 기본 규칙
+- 참고 리소스 유형
+	- document : 객체 인스턴스나 데이터베이스 레코드와 유사한 개념
+	- collection : 서버에서 관리하는 디렉터리라는 리소스
+	- store : 클라이언트에서 관리하는 리소스 저장소
+1. URI
+	1.   리소스는 동사보다는 명사를 대문자보다는 소문자를 사용
+	 리소스의 document 이름으로는 단수명사를 사용
+	2. 리소스의 collection이름으로 복수명사를 사용
+	3. 리소스의 store이름으로는 복수명사 사용
+2. 자원에대한 행위는 HTTP Method로 표현
+	1. URI에 Methon가 들어가면 안됨
+	- ` ex) GET /members/delete/1-> DELETE /members/1`
+	2. URI에 행위에 대한 동사표현이 들어가면 안된다
+	- ` ex) GET /members/show/1-> GET /members/1`
+	3. 경로 부분중 변하는 부분은 유일한 값으로 대체한다 
+	- ` ex) GET /members/delete/1-> DELETE /members/1`
+### REST API 설계 규칙
+1. 슬래시 구분자(/)는 계층관계를 나타내는데 사용
+2. URI 마지막 문자로 슬래시를 포함하지 않는다
+3. 하이픈은 URI 가독성을 높인다
+4. 밑줄(_)은 URI에 사용하지 않는다
+5. URI 경로에는 소문자가 적합
+6. 파일확장자는 URI에 포함하지 않는다
+### 참고 응답상태코드
+- 1xx : 전송 프로토콜 수준의 정보 교환
+- 2xx : 클라어인트 요청이 성공적으로 수행됨
+- 3xx : 클라이언트는 요청을 완료하기 위해 추가적인 행동을 취해야 함
+- 4xx : 클라이언트의 잘못된 요청
+- 5xx : 서버쪽 오류로 인한 상태코드
+### RESTful의 개념
+![참고](https://gmlwjd9405.github.io/images/network/restful.png)
+
+### RESTful이란
+- 일반적으로 REST를 아키텍처를 구현하는 웹 서비스를 나타내기 위해 사용되는 용어
+	- REST API를 제공하는 웹 서비스를 RESTful하다고 지칭
+- RESTful은 REST를 REST답게 쓰기 위한 방법으로
+	- 즉 REST 원리는 따르는 시스템은 RESTful이란 용어로 지칭
+### RESTful의 목적
+- 이해하고 쉽고 사용하기 쉬운 RESTAPI를 만드는것
+- RESTful한 API를 구현하는 근본적인 목적이 `성능향상`에 있는 것이 아니라 `일관적인데 컨벤션`을 통한 `API의 이해도 및 호환성`을 높이는 것이 주 목적, 성능이 중요한 상황에서 굳이 RESTful API를 구현할 필요는 없음
+
 #### 참고
 - https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
